@@ -5,25 +5,8 @@ import 'models/loja.dart';
 class NewsCard extends StatelessWidget {
   const NewsCard({
     Key? key,
-    /* required this.image,
-    required this.titulo,
-    required this.endereco,
-    required this.telefone,
-    required this.email,
-    required this.whats,
-    required this.site,
-    required this.localizacao, */
     required this.loja,
   }) : super(key: key);
-
-  /* final String image;
-  final String titulo;
-  final String endereco;
-  final String telefone;
-  final String email;
-  final String whats;
-  final String site;
-  final String localizacao; */
 
   final Loja loja;
 
