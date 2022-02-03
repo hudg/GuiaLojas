@@ -2,28 +2,13 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'models/loja.dart';
 
+List<Loja> lsContato = [];
+
 class NewsCard extends StatelessWidget {
   const NewsCard({
     Key? key,
-    /* required this.image,
-    required this.titulo,
-    required this.endereco,
-    required this.telefone,
-    required this.email,
-    required this.whats,
-    required this.site,
-    required this.localizacao, */
     required this.loja,
   }) : super(key: key);
-
-  /* final String image;
-  final String titulo;
-  final String endereco;
-  final String telefone;
-  final String email;
-  final String whats;
-  final String site;
-  final String localizacao; */
 
   final Loja loja;
 
@@ -32,6 +17,7 @@ class NewsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    _ordenacaoContatos(loja);
     return Column(
       children: [
         Row(
@@ -62,17 +48,13 @@ class NewsCard extends StatelessWidget {
                       style: Theme.of(context).textTheme.headline6,
                     ),
                   ),
-                  Row(
-                    children: [
-                      Row(children: [
-                        _linha(1, loja.telefone),
-                        _linha(2, loja.whats),
-                        _linha(3, loja.email),
-                        _linha(4, loja.site),
-                        _linha(5, loja.localizacao),
-                      ])
-                    ],
-                  ),
+                  Row(children: [
+                    _linha(lsContato[0].retorno, lsContato[0].tipoContato),
+                    _linha(lsContato[1].retorno, lsContato[1].tipoContato),
+                    _linha(lsContato[2].retorno, lsContato[2].tipoContato),
+                    _linha(lsContato[3].retorno, lsContato[3].tipoContato),
+                    _linha(lsContato[4].retorno, lsContato[4].tipoContato)
+                  ])
                 ],
               ),
             ),
@@ -82,20 +64,39 @@ class NewsCard extends StatelessWidget {
     );
   }
 
-  Row _linha(int tipo, String icon) {
-    String pathImage = "assets/images/";
-    if (tipo == 1) {
-      pathImage += icon.isEmpty ? "branco.png" : "phone.png";
-    } else if (tipo == 2) {
-      pathImage += icon.isEmpty ? "branco.png" : "whatsapp.png";
-    } else if (tipo == 3) {
-      pathImage += icon.isEmpty ? "branco.png" : "email.png";
-    } else if (tipo == 4) {
-      pathImage += icon.isEmpty ? "branco.png" : "site.png";
-    } else if (tipo == 5) {
-      pathImage += icon.isEmpty ? "branco.png" : "location.png";
+  void _ordenacaoContatos(Loja loja) {
+    lsContato = [
+      Loja(retorno: loja.telefone, tipoContato: 1),
+      Loja(retorno: loja.whats, tipoContato: 2),
+      Loja(retorno: loja.email, tipoContato: 3),
+      Loja(retorno: loja.site, tipoContato: 4),
+      Loja(retorno: loja.localizacao, tipoContato: 5)
+    ];
+    lsContato.sort((a, b) => a.retorno.compareTo(b.retorno));
+
+    int pos = 5;
+    for (var item in lsContato) {
+      item.posicao = pos--;
     }
 
+    lsContato.sort((a, b) => a.posicao.compareTo(b.posicao));
+  }
+
+  Row _linha(String icon, int tipoContato) {
+    String pathImage = "assets/images/";
+    if (tipoContato == 1) {
+      pathImage += icon.isEmpty ? "branco.png" : "phone.png";
+    } else if (tipoContato == 2) {
+      pathImage += icon.isEmpty ? "branco.png" : "whatsapp.png";
+    } else if (tipoContato == 3) {
+      pathImage += icon.isEmpty ? "branco.png" : "email.png";
+    } else if (tipoContato == 4) {
+      pathImage += icon.isEmpty ? "branco.png" : "site.png";
+    } else if (tipoContato == 5) {
+      pathImage += icon.isEmpty ? "branco.png" : "location.png";
+    } else {
+      pathImage += "branco.png";
+    }
     return Row(children: [
       const Padding(
         padding: EdgeInsets.symmetric(horizontal: defaultPadding),
@@ -104,11 +105,8 @@ class NewsCard extends StatelessWidget {
           backgroundColor: Colors.transparent,
         ),
       ),
-      SizedBox(
-        height: _height,
-        width: _width,
-        child: Image.asset(pathImage),
-      ),
+      SizedBox(height: _height, width: _width, child: Image.asset(pathImage))
+      //child: Text(icon)),
     ]);
   }
 }
