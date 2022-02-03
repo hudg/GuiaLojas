@@ -9,6 +9,8 @@ class Loja {
   String localizacao;
   bool favorito;
   String retorno;
+  int posicao;
+  int tipoContato;
 
   Loja(
       {this.idLoja = 0,
@@ -20,7 +22,9 @@ class Loja {
       this.site = "",
       this.localizacao = "",
       this.favorito = true,
-      this.retorno = ""});
+      this.retorno = "",
+      this.posicao = 0,
+      this.tipoContato = 0});
 
   factory Loja.fromMap(Map map) {
     Loja obj = Loja();

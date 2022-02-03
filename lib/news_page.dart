@@ -27,12 +27,39 @@ class _NewsPageState extends State<NewsPage> {
   }
 
   List<Loja> lojas = [
-    Loja(idLoja: 1, titulo: "Loja 1", endereco: "Rua 1", telefone: "11111"),
-    Loja(idLoja: 2, titulo: "Loja 2", endereco: "Rua 2", telefone: "22222"),
-    Loja(idLoja: 3, titulo: "Loja 3", endereco: "Rua 3", email: "hugo@hugo"),
-    Loja(idLoja: 4, titulo: "Loja 4", endereco: "Rua 4", whats: "99999"),
-    Loja(idLoja: 5, titulo: "Loja 5", endereco: "Rua 5", site: "wwww"),
-    Loja(idLoja: 6, titulo: "Loja 6", endereco: "Rua 6", localizacao: "gps"),
+    Loja(
+        idLoja: 1,
+        titulo: "Loja 1",
+        endereco: "endereco 1",
+        telefone: "telefone 1",
+        whats: "whats 1",
+        email: "email@1",
+        site: "site1",
+        localizacao: "gps1"),
+    Loja(
+        idLoja: 2,
+        titulo: "Loja 2",
+        endereco: "endereco 2",
+        telefone: "telefone 2",
+        whats: "whats 2",
+        email: "email@2",
+        site: "site2",
+        localizacao: ""),
+    Loja(idLoja: 3, titulo: "Loja 3", endereco: "endereco 3", email: "hugo@3"),
+    Loja(idLoja: 4, titulo: "Loja 4", endereco: "endereco 4", whats: "4444"),
+    Loja(
+        idLoja: 5,
+        titulo: "Loja 5",
+        endereco: "endereco 5",
+        whats: "whats5",
+        site: "W5"),
+    Loja(
+      idLoja: 6,
+      titulo: "Loja 6",
+      endereco: "endereco 6",
+      whats: "W6",
+      localizacao: "gps6",
+    ),
   ];
 
   @override
