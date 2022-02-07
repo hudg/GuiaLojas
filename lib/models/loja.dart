@@ -1,11 +1,13 @@
+import 'package:flutter/cupertino.dart';
+
 class Loja {
   int idLoja;
-  String titulo;
+  String descricao;
   String endereco;
   String telefone;
   String email;
-  String whats;
-  String site;
+  String whatsapp;
+  String url;
   String localizacao;
   bool favorito;
   String retorno;
@@ -14,12 +16,12 @@ class Loja {
 
   Loja(
       {this.idLoja = 0,
-      this.titulo = "",
+      this.descricao = "",
       this.endereco = "",
       this.telefone = "",
       this.email = "",
-      this.whats = "",
-      this.site = "",
+      this.whatsapp = "",
+      this.url = "",
       this.localizacao = "",
       this.favorito = true,
       this.retorno = "",
@@ -29,10 +31,39 @@ class Loja {
   factory Loja.fromMap(Map map) {
     Loja obj = Loja();
     obj.idLoja = map['idLoja'];
-    obj.titulo = map['titulo'];
-    obj.favorito = (map['favorito'] == 1 ? true : false);
-    obj.retorno = map['retorno'];
+    obj.descricao = map['descricao'];
+    obj.endereco = map['endereco'];
+    obj.telefone = map['telefone'];
+    obj.email = map['email'];
+    obj.url = map['url'];
+    obj.localizacao = map['localizacao'];
+    //obj.favorito = (map['favorito'] == 1 ? true : false);
+    //obj.retorno = map['retorno'];
 
     return obj;
+  }
+
+  Loja.fromJson(Map<String, Object?> json)
+      : this(
+          idLoja: json['idLoja']! as int,
+          //descricao: (json['descricao']! as List).cast<String>(),
+          descricao: json['descricao']! as String,
+          endereco: json['endereco']! as String,
+          telefone: json['telefone']! as String,
+          email: json['email']! as String,
+          url: json['url']! as String,
+          localizacao: json['localizacao']! as String,
+        );
+
+  Map<String, Object?> toJson() {
+    return {
+      'idLoja': idLoja,
+      'descricao': descricao,
+      'endereco': endereco,
+      'telefone': telefone,
+      'email': email,
+      'url': url,
+      'localizacao': localizacao,
+    };
   }
 }

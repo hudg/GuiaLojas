@@ -1,4 +1,4 @@
-package com.example.guialojas
+package br.com.lojasbras
 
 import io.flutter.embedding.android.FlutterActivity
 

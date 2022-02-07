@@ -36,7 +36,7 @@ class NewsCard extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         vertical: defaultPadding / 2),
                     child: Text(
-                      loja.titulo,
+                      loja.descricao,
                       style: Theme.of(context).textTheme.headline5,
                     ),
                   ),
@@ -67,9 +67,9 @@ class NewsCard extends StatelessWidget {
   void _ordenacaoContatos(Loja loja) {
     lsContato = [
       Loja(retorno: loja.telefone, tipoContato: 1),
-      Loja(retorno: loja.whats, tipoContato: 2),
+      Loja(retorno: loja.whatsapp, tipoContato: 2),
       Loja(retorno: loja.email, tipoContato: 3),
-      Loja(retorno: loja.site, tipoContato: 4),
+      Loja(retorno: loja.url, tipoContato: 4),
       Loja(retorno: loja.localizacao, tipoContato: 5)
     ];
     lsContato.sort((a, b) => a.retorno.compareTo(b.retorno));
