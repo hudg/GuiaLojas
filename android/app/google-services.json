@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1424287492",
+    "firebase_url": "https://lojas-bom-retiro.firebaseio.com",
+    "project_id": "lojas-bom-retiro",
+    "storage_bucket": "lojas-bom-retiro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1424287492:android:681c6ea1212a56fa6b5251",
+        "android_client_info": {
+          "package_name": "br.com.lojasbras"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1424287492-jm6ja5dabgbhb6gfen6m5eb7kh22755d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVfCdtlIDgXhSkye0a9EoO9GOziKCMS0o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1424287492-jm6ja5dabgbhb6gfen6m5eb7kh22755d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
