@@ -37,7 +37,7 @@ class NewsCard extends StatelessWidget {
                         vertical: defaultPadding / 2),
                     child: Text(
                       loja.descricao,
-                      style: Theme.of(context).textTheme.headline5,
+                      style: Theme.of(context).textTheme.headlineMedium,
                     ),
                   ),
                   Padding(
@@ -45,7 +45,7 @@ class NewsCard extends StatelessWidget {
                         vertical: defaultPadding / 2),
                     child: Text(
                       loja.endereco,
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme.of(context).textTheme.headlineMedium,
                     ),
                   ),
                   Row(children: [
